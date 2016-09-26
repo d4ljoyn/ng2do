@@ -4,9 +4,12 @@
 import * as bodyParser from "body-parser";
 import * as express from "express";
 import * as path from "path";
+import * as mongoose from "mongoose";
 
 import * as indexRoute from "./routes/index";
 import mainController from "./controllers/main";
+import apiController from "./controllers/api";
+import logger from "logger";
 
 /**
  * The server.
@@ -59,6 +62,31 @@ class Server {
 
     //mount logger
     //this.app.use(logger("dev"));
+    // Build the connection string
+    var dbURI = "mongodb://localhost:27017/posts";
+
+    // Create the database connection
+    mongoose.connect(dbURI);
+
+    mongoose.connection.once("open", function() {
+      logger.log("debug", "Mongoose is open.");
+    });
+    // CONNECTION EVENTS
+    // When successfully connected
+    mongoose.connection.on("connected", function () {
+      console.log("Mongoose default connection open to " + dbURI);
+    });
+
+    // If the connection throws an error
+    mongoose.connection.on("error", function (err : string) {
+      console.log("Mongoose default connection error: " + err);
+    });
+
+    // When the connection is disconnected
+    mongoose.connection.on("disconnected", function () {
+      console.log("Mongoose default connection disconnected");
+    });
+
 
     //mount json form parser
     this.app.use(bodyParser.json());
@@ -95,9 +123,9 @@ class Server {
 
     //home page
     router.get("/", mainController.getIndex);
-
+    router.get("/api/posts", apiController.getAllPosts);
     //use router middleware
-    this.app.use(router);
+    this.app.use("/", router);
   }
 }
 
