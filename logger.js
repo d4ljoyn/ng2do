@@ -1,8 +1,5 @@
-
-import * as winston from "winston";
-
-// winston.emitErrs = true;
-
+"use strict";
+const winston = require("winston");
 let logger = new winston.Logger({
     transports: [
         new winston.transports.File({
@@ -10,7 +7,7 @@ let logger = new winston.Logger({
             filename: "./logs/all-logs.log",
             handleExceptions: true,
             json: true,
-            maxsize: 5242880, //5MB
+            maxsize: 5242880,
             maxFiles: 5,
             colorize: false
         }),
@@ -23,10 +20,10 @@ let logger = new winston.Logger({
     ],
     exitOnError: false
 });
-
-export default logger;
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.default = logger;
 module.exports.stream = {
-    write: function(message : string, encoding : string){
+    write: function (message, encoding) {
         logger.info(message);
     }
 };

@@ -9,7 +9,7 @@ import * as mongoose from "mongoose";
 import * as indexRoute from "./routes/index";
 import mainController from "./controllers/main";
 import apiController from "./controllers/api";
-import logger from "logger";
+import logger from "./logger";
 
 /**
  * The server.
@@ -124,6 +124,7 @@ class Server {
     //home page
     router.get("/", mainController.getIndex);
     router.get("/api/posts", apiController.getAllPosts);
+    router.get("/api/posts/:postid", apiController.getPost);
     //use router middleware
     this.app.use("/", router);
   }

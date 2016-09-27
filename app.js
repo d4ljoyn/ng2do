@@ -6,6 +6,7 @@ const mongoose = require("mongoose");
 const indexRoute = require("./routes/index");
 const main_1 = require("./controllers/main");
 const api_1 = require("./controllers/api");
+const logger_1 = require("./logger");
 class Server {
     constructor() {
         this.app = express();
@@ -21,7 +22,7 @@ class Server {
         var dbURI = "mongodb://localhost:27017/posts";
         mongoose.connect(dbURI);
         mongoose.connection.once("open", function () {
-            console.log("Mongoose is open.");
+            logger_1.default.log("debug", "Mongoose is open.");
         });
         mongoose.connection.on("connected", function () {
             console.log("Mongoose default connection open to " + dbURI);
@@ -48,6 +49,7 @@ class Server {
         var index = new indexRoute.Index();
         router.get("/", main_1.default.getIndex);
         router.get("/api/posts", api_1.default.getAllPosts);
+        router.get("/api/posts/:postid", api_1.default.getPost);
         this.app.use("/", router);
     }
 }
