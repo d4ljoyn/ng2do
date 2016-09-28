@@ -27,6 +27,7 @@ let apiController = {
             if (err) {
                 res.send(err);
             }
+            res.json(newPost);
         });
     }
 };

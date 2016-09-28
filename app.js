@@ -50,6 +50,7 @@ class Server {
         router.get("/", main_1.default.getIndex);
         router.get("/api/posts", api_1.default.getAllPosts);
         router.get("/api/posts/:postid", api_1.default.getPost);
+        router.post("/api/posts", api_1.default.createPost);
         this.app.use("/", router);
     }
 }
