@@ -69,22 +69,22 @@ class Server {
     mongoose.connect(dbURI);
 
     mongoose.connection.once("open", function() {
-      logger.log("debug", "Mongoose is open.");
+      logger.debug( "Mongoose is open.");
     });
     // CONNECTION EVENTS
     // When successfully connected
     mongoose.connection.on("connected", function () {
-      console.log("Mongoose default connection open to " + dbURI);
+      logger.debug( "Mongoose default connection open to " + dbURI);
     });
 
     // If the connection throws an error
     mongoose.connection.on("error", function (err : string) {
-      console.log("Mongoose default connection error: " + err);
+      logger.debug("Mongoose default connection error: " + err);
     });
 
     // When the connection is disconnected
     mongoose.connection.on("disconnected", function () {
-      console.log("Mongoose default connection disconnected");
+      logger.debug("Mongoose default connection disconnected");
     });
 
 

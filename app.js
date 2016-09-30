@@ -22,16 +22,16 @@ class Server {
         var dbURI = "mongodb://localhost:27017/posts";
         mongoose.connect(dbURI);
         mongoose.connection.once("open", function () {
-            logger_1.default.log("debug", "Mongoose is open.");
+            logger_1.default.debug("Mongoose is open.");
         });
         mongoose.connection.on("connected", function () {
-            console.log("Mongoose default connection open to " + dbURI);
+            logger_1.default.debug("Mongoose default connection open to " + dbURI);
         });
         mongoose.connection.on("error", function (err) {
-            console.log("Mongoose default connection error: " + err);
+            logger_1.default.debug("Mongoose default connection error: " + err);
         });
         mongoose.connection.on("disconnected", function () {
-            console.log("Mongoose default connection disconnected");
+            logger_1.default.debug("Mongoose default connection disconnected");
         });
         this.app.use(bodyParser.json());
         this.app.use(bodyParser.urlencoded({ extended: true }));
