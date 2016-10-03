@@ -10,7 +10,7 @@ module.exports  = {
     loaders: [
       {
         test: /\.css$/, // Use the style-loader for all .css files
-        loaders: ['style', 'css']
+        loaders: ['style-loader', 'css-loader']
       },
       {
         test: /\.(ttf|eot|svg|woff(2)?)(\?[a-z0-9]+)?$/, // Use the file-loader for fonts

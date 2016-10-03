@@ -123,6 +123,7 @@ class Server {
 
     //home page
     router.get("/", mainController.getIndex);
+    router.get("/templates/:template", mainController.getTemplate);
     router.get("/api/posts", apiController.getAllPosts);
     router.get("/api/posts/:postid", apiController.getPost);
     router.post("/api/posts", apiController.createPost);

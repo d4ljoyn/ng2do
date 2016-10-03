@@ -48,6 +48,7 @@ class Server {
         router = express.Router();
         var index = new indexRoute.Index();
         router.get("/", main_1.default.getIndex);
+        router.get("/templates/:template", main_1.default.getTemplate);
         router.get("/api/posts", api_1.default.getAllPosts);
         router.get("/api/posts/:postid", api_1.default.getPost);
         router.post("/api/posts", api_1.default.createPost);
