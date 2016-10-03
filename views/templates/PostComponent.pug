@@ -1,0 +1,25 @@
+// views/templates/PostComponent.pug
+.container
+  .jumbotron.text-center
+    h1 Posts&nbsp;
+      span.label.label-info {{posts.length}}
+  .row
+    .col-sm-6.col-sm-offset-3
+      table.table.table-bordered
+        thead
+          tr
+            th.text-center Posts
+        tbody
+          tr(*ngFor="var post of posts")
+            td
+              input(type='checkbox' on-click='deletePost(post._id)' bind-checked="false")
+              | &nbsp;&nbsp;
+              | {{post.content}}
+  .row
+    .col-sm-6.col-sm-offset-3
+      form(on-ngSubmit='createTodo()')
+        .form-group
+          input.form-control.input-lg.text-center(type='text' placeholder='What to do next?' bindon-ngModel='postData.content' required)
+        .form-group.text-center
+          br
+          button.btn.btn-success.btn-lg(type='submit') Submit

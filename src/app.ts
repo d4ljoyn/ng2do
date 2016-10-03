@@ -126,6 +126,8 @@ class Server {
     router.get("/api/posts", apiController.getAllPosts);
     router.get("/api/posts/:postid", apiController.getPost);
     router.post("/api/posts", apiController.createPost);
+    router.put("/api/posts/:postid", apiController.updatePost);
+    router.delete("/api/posts/:postid", apiController.deletePost);
     //use router middleware
     this.app.use("/", router);
   }

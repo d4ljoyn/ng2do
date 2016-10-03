@@ -12,7 +12,8 @@ module.exports = function (grunt) {
                     module: "commonjs",
                     noLib: true,
                     target: "es6",
-                    sourceMap: false
+                    sourceMap: false,
+                    experimentalDecorators: true,
                 }
             }
         },
@@ -41,11 +42,4 @@ module.exports = function (grunt) {
         "ts",
         "tslint"
     ]);
-
-    grunt.registerTask("server", [
-        "default",
-        "run",
-        "watch"
-    ]);
-
 };

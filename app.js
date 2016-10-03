@@ -51,6 +51,8 @@ class Server {
         router.get("/api/posts", api_1.default.getAllPosts);
         router.get("/api/posts/:postid", api_1.default.getPost);
         router.post("/api/posts", api_1.default.createPost);
+        router.put("/api/posts/:postid", api_1.default.updatePost);
+        router.delete("/api/posts/:postid", api_1.default.deletePost);
         this.app.use("/", router);
     }
 }

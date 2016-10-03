@@ -6,7 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "grunt": "grunt",
-    "start": "node ./bin/www"
+    "start": "node ./bin/www",
+    "webpack": "webpack",
+    "webpack:w": "webpack --watch"
   },
   "repository": {
     "type": "git",
@@ -15,10 +17,23 @@
   "author": "d4ljoyn",
   "license": "MIT",
   "dependencies": {
+    "@angular/common": "~2.0.1",
+    "@angular/compiler": "~2.0.1",
+    "@angular/core": "~2.0.1",
+    "@angular/forms": "~2.0.1",
+    "@angular/http": "~2.0.1",
+    "@angular/platform-browser": "~2.0.1",
+    "@angular/platform-browser-dynamic": "~2.0.1",
+    "@angular/router": "~3.0.1",
+    "@angular/upgrade": "~2.0.1",
+    "angular-in-memory-web-api": "~0.1.1",
     "body-parser": "^1.15.2",
+    "bootstrap": "^3.3.7",
     "cookie-parser": "^1.4.3",
+    "core-js": "^2.4.1",
     "ejs": "^2.5.2",
     "express": "^4.14.0",
+    "file-loader": "^0.9.0",
     "grunt": "^1.0.1",
     "grunt-cli": "^1.2.0",
     "grunt-contrib-connect": "^1.0.2",
@@ -33,9 +48,16 @@
     "node": "0.0.0",
     "path": "^0.12.7",
     "pug": "^2.0.0-beta6",
+    "reflect-metadata": "^0.1.8",
+    "rxjs": "5.0.0-beta.12",
+    "script-loader": "^0.7.0",
+    "style-loader": "^0.13.1",
+    "systemjs": "0.19.39",
     "tslint": "^3.15.1",
     "typescript": "^2.0.3",
     "typings": "^1.4.0",
-    "winston": "^2.2.0"
+    "webpack": "^1.13.0",
+    "winston": "^2.2.0",
+    "zone.js": "^0.6.25"
   }
 }
