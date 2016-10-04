@@ -1,2 +1,20 @@
-h1 Posts
-p Placeholder
+// views/index.pug
+doctype html
+html
+    head
+        title Posts
+        meta(name='description' content='A small app written using the Angular 2 beta and the rest of the MEAN stack')
+        meta(charset='utf-8')
+        meta(name='viewport' content='width=device-width,initial-scale=1.0')
+        style.
+            /* Initial CSS to prevent FOUC (Flash of Unstyled Content) */
+            .loading {
+                padding-top: 15px;
+                font-size: 36px;
+                font-family: Arial;
+                text-align: center;
+            }
+    body
+        post-app
+            .loading Loading...
+        script(src="/bundle.js")

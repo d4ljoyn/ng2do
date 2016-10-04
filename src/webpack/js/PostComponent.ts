@@ -23,14 +23,14 @@ export class PostComponent {
         this.posts = res;
       });
   }
-  createTodo() {
+  createPost() {
     this.postService.createNewPost(this.postData)
       .subscribe((res) => {
         this.posts = res;
         this.postData.text = "";
       });
   }
-  deleteTodo(id: string) {
+  deletePost(id: string) {
     this.postService.deletePost(id)
       .subscribe((res) => {
         this.posts = res;

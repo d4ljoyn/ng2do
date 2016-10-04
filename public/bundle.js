@@ -36390,14 +36390,14 @@
 	            this.posts = res;
 	        });
 	    }
-	    createTodo() {
+	    createPost() {
 	        this.postService.createNewPost(this.postData)
 	            .subscribe((res) => {
 	            this.posts = res;
 	            this.postData.text = "";
 	        });
 	    }
-	    deleteTodo(id) {
+	    deletePost(id) {
 	        this.postService.deletePost(id)
 	            .subscribe((res) => {
 	            this.posts = res;
