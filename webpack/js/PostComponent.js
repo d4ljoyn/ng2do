@@ -44,6 +44,7 @@ PostComponent = __decorate([
         providers: [PostService_1.PostService],
         templateUrl: "templates/PostComponent",
     }),
+    core_1.Injectable(),
     __param(0, core_1.Inject(PostService_1.PostService))
 ], PostComponent);
 exports.PostComponent = PostComponent;

@@ -11,34 +11,35 @@ var __param = (this && this.__param) || function (paramIndex, decorator) {
 const core_1 = require("@angular/core");
 const http_1 = require("@angular/http");
 require("rxjs/add/operator/map");
+const Rx_1 = require("rxjs/Rx");
 let PostService = class PostService {
     constructor(http) {
         this.http = http;
         this.http = http;
     }
     getAllPosts() {
-        return this.http.get("/posts")
+        return this.http.get("/api/posts")
             .map((res) => {
             return res.json();
-        });
+        }).catch((error) => Rx_1.Observable.throw(error.json().error || "Server error"));
     }
     createNewPost(data) {
         let headers = new http_1.Headers();
         headers.append("Content-Type", "application/json");
-        return this.http.post("/posts", JSON.stringify(data), {
+        return this.http.post("/api/posts", JSON.stringify(data), {
             headers: headers
         }).map((res) => {
             return res.json();
         });
     }
     updatePost(id, data) {
-        return this.http.put("/posts/" + id, data)
+        return this.http.put("/api/posts/" + id, data)
             .map((res) => {
             return res.json();
         });
     }
     deletePost(id) {
-        return this.http.delete("/posts/" + id)
+        return this.http.delete("/api/posts/" + id)
             .map((res) => {
             return res.json();
         });

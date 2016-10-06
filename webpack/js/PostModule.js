@@ -6,13 +6,15 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 const core_1 = require("@angular/core");
+const http_1 = require("@angular/http");
 const platform_browser_1 = require("@angular/platform-browser");
 const PostComponent_1 = require("./PostComponent");
 let PostModule = class PostModule {
 };
 PostModule = __decorate([
     core_1.NgModule({
-        imports: [platform_browser_1.BrowserModule],
+        imports: [platform_browser_1.BrowserModule, http_1.HttpModule],
+        providers: [],
         declarations: [PostComponent_1.PostComponent],
         bootstrap: [PostComponent_1.PostComponent]
     })

@@ -1,5 +1,5 @@
 import {Inject, Injectable} from "@angular/core";
-import {Component } from "@angular/core"; // Import Component and View constructor (for metadata)
+import {Component } from "@angular/core";
 import {PostService} from "./PostService";
 
 @Component( {
@@ -7,7 +7,7 @@ import {PostService} from "./PostService";
   providers: [PostService],
   templateUrl: "templates/PostComponent",
 })
-
+@Injectable()
 export class PostComponent {
   public posts: any;
   public postData: any;
