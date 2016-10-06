@@ -6,6 +6,7 @@ html
         meta(name='description' content='A small app written using the Angular 2 beta and the rest of the MEAN stack')
         meta(charset='utf-8')
         meta(name='viewport' content='width=device-width,initial-scale=1.0')
+
         style.
             /* Initial CSS to prevent FOUC (Flash of Unstyled Content) */
             .loading {
@@ -14,7 +15,15 @@ html
                 font-family: Arial;
                 text-align: center;
             }
+        script(src="node_modules/core-js/client/shim.min.js")
+        script(src="node_modules/zone.js/dist/zone.js")
+        script(src="node_modules/reflect-metadata/Reflect.js")
+        script(src="node_modules/systemjs/dist/system.src.js")
+        script(src="systemjs.config.js")
+        script.
+            System.import('app').catch(function(err){ console.error(err); });
+
     body
         post-app
             .loading Loading...
-        script(src="/bundle.js")
+

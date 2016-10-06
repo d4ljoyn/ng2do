@@ -1,4 +1,4 @@
-// webpack/js/TodoComponent.js
+import {Inject, Injectable} from "@angular/core";
 import {Component } from "@angular/core"; // Import Component and View constructor (for metadata)
 import {PostService} from "./PostService";
 
@@ -9,9 +9,9 @@ import {PostService} from "./PostService";
 })
 
 export class PostComponent {
-  private posts: any;
-  private postData: any;
-  constructor(public postService : PostService) {
+  public posts: any;
+  public postData: any;
+  constructor(@Inject(PostService) public postService : PostService) {
     this.posts = [];
     this.postData = {
       text: ""

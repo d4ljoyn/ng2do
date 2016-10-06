@@ -5,7 +5,7 @@ import "rxjs/add/operator/map";
 @Injectable()
 export class PostService {
 
-  constructor(public http: Http) {
+  constructor(@Inject(Http) public http: Http) {
     this.http = http; // http is an instance of the main Http class
   }
   getAllPosts() {
