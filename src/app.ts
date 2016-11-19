@@ -6,7 +6,7 @@ import * as express from "express";
 import * as path from "path";
 import * as mongoose from "mongoose";
 
-import * as indexRoute from "./routes/index";
+
 import mainController from "./controllers/main";
 import apiController from "./controllers/api";
 import logger from "./logger";
@@ -118,8 +118,6 @@ class Server {
     let router: express.Router;
     router = express.Router();
 
-    //create routes
-    var index: indexRoute.Index = new indexRoute.Index();
 
     //home page
     router.get("/", mainController.getIndex);

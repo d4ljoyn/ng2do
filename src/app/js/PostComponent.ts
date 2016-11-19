@@ -18,7 +18,6 @@ export class PostComponent {
     };
     this.postService = postService;
     this.postService.getAllPosts()
-    // Rxjs, we subscribe to the response
       .subscribe((res) => {
         this.posts = res;
       });

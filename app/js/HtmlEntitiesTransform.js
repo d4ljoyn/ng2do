@@ -6,18 +6,12 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 const core_1 = require("@angular/core");
-const http_1 = require("@angular/http");
-const platform_browser_1 = require("@angular/platform-browser");
-const PostComponent_1 = require("./PostComponent");
-const HtmlEntitiesTransform_1 = require("./HtmlEntitiesTransform");
-let PostModule = class PostModule {
+let HtmlEntitiesTransform = class HtmlEntitiesTransform {
+    transform(value) {
+        return value.replace(/\n/mg, "<br/>");
+    }
 };
-PostModule = __decorate([
-    core_1.NgModule({
-        imports: [platform_browser_1.BrowserModule, http_1.HttpModule],
-        providers: [],
-        declarations: [PostComponent_1.PostComponent, HtmlEntitiesTransform_1.HtmlEntitiesTransform],
-        bootstrap: [PostComponent_1.PostComponent]
-    })
-], PostModule);
-exports.PostModule = PostModule;
+HtmlEntitiesTransform = __decorate([
+    core_1.Pipe({ name: "htmlEntities" })
+], HtmlEntitiesTransform);
+exports.HtmlEntitiesTransform = HtmlEntitiesTransform;

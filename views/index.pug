@@ -15,15 +15,18 @@ html
                 font-family: Arial;
                 text-align: center;
             }
+
         script(src="node_modules/core-js/client/shim.min.js")
         script(src="node_modules/zone.js/dist/zone.js")
         script(src="node_modules/reflect-metadata/Reflect.js")
         script(src="node_modules/systemjs/dist/system.src.js")
         script(src="systemjs.config.js")
+        link(rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css")
+        link(rel="stylesheet" href="css/style.css")
         script.
             System.import('app').catch(function(err){ console.error(err); });
 
-    body
+    body(class="home blog")
         post-app
             .loading Loading...
 

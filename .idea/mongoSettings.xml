@@ -4,13 +4,12 @@
     <option name="serverConfigurations">
       <list>
         <ServerConfiguration>
-          <option name="label" value="posts" />
+          <option name="label" value="mongo" />
           <option name="serverUrls">
             <list>
               <option value="localhost:27017" />
             </list>
           </option>
-          <option name="userDatabase" value="posts" />
         </ServerConfiguration>
       </list>
     </option>

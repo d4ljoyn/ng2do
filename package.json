@@ -6,9 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "grunt": "grunt",
-    "start": "node ./bin/www",
-    "webpack": "webpack",
-    "webpack:w": "webpack --watch"
+    "start": "node ./bin/www"
   },
   "repository": {
     "type": "git",
@@ -28,13 +26,14 @@
     "@angular/upgrade": "~2.0.1",
     "angular-in-memory-web-api": "~0.1.1",
     "body-parser": "^1.15.2",
-    "bootstrap": "^3.3.7",
+    "bootstrap": "^4.0.0-alpha.4",
     "cookie-parser": "^1.4.3",
     "core-js": "^2.4.1",
     "css-loader": "^0.25.0",
     "ejs": "^2.5.2",
     "express": "^4.14.0",
     "file-loader": "^0.9.0",
+    "fontawesome": "^4.5.0",
     "grunt": "^1.0.1",
     "grunt-cli": "^1.2.0",
     "grunt-contrib-connect": "^1.0.2",
