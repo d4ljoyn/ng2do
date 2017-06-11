@@ -63,7 +63,9 @@ class Server {
     //mount logger
     //this.app.use(logger("dev"));
     // Build the connection string
-    var dbURI = "mongodb://localhost:27017/posts";
+	  var mongoHost = "192.168.0.102";
+	  let dbURI : string = "mongodb://" + mongoHost + ":27017/posts";
+  //var dbURI = "mongodb://localhost:27017/posts";
 
     // Create the database connection
     mongoose.connect(dbURI);

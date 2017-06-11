@@ -3,7 +3,6 @@ const bodyParser = require("body-parser");
 const express = require("express");
 const path = require("path");
 const mongoose = require("mongoose");
-const indexRoute = require("./routes/index");
 const main_1 = require("./controllers/main");
 const api_1 = require("./controllers/api");
 const logger_1 = require("./logger");
@@ -19,7 +18,8 @@ class Server {
     config() {
         this.app.set("views", path.join(__dirname, "views"));
         this.app.set("view engine", "pug");
-        var dbURI = "mongodb://localhost:27017/posts";
+        var mongoHost = "192.168.0.102";
+        let dbURI = "mongodb://" + mongoHost + ":27017/posts";
         mongoose.connect(dbURI);
         mongoose.connection.once("open", function () {
             logger_1.default.debug("Mongoose is open.");
@@ -46,7 +46,6 @@ class Server {
     routes() {
         let router;
         router = express.Router();
-        var index = new indexRoute.Index();
         router.get("/", main_1.default.getIndex);
         router.get("/templates/:template", main_1.default.getTemplate);
         router.get("/api/posts", api_1.default.getAllPosts);
